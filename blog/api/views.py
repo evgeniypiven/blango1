@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from blog.api.serializers import PostSerializer, PostDetailSerializer
@@ -22,4 +22,4 @@ class TagViewSet(viewsets.ModelViewSet):
         post_serializer = PostSerializer(
         tag.posts, many=True, context={"request": request}
         )
-    return Response(post_serializer.data)
+        return Response(post_serializer.data)
