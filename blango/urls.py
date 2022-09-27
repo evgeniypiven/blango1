@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls.static import static
+from blog.views import post_table
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/v1/", include("blog.api.urls")),
+    path("post-table/", post_table, name="blog-post-table"),
 ]
 
 if settings.DEBUG:
